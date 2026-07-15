@@ -30,10 +30,10 @@ from keras.optimizers import Adam
 
 
 plt.imshow(cv2.imread("/kaggle/input/pothole-detection-dataset/potholes/1.jpg"))
-<matplotlib.image.AxesImage at 0x7af2cd6a3400>
+# <matplotlib.image.AxesImage at 0x7af2cd6a3400>
 
 plt.imshow(cv2.imread("/kaggle/input/pothole-detection-dataset/normal/2.jpg"))
-<matplotlib.image.AxesImage at 0x7af2c9da6500>
+# <matplotlib.image.AxesImage at 0x7af2c9da6500>
 
 
 train_datagen = ImageDataGenerator(
@@ -48,9 +48,7 @@ training_set = train_datagen.flow_from_directory('/kaggle/input/pothole-detectio
     batch_size = 32, 
     class_mode = 'binary', 
     subset="training")
-
-
-Found 546 images belonging to 2 classes.
+# output -> Found 546 images belonging to 2 classes.
 
 
 validation_generator = train_datagen.flow_from_directory("/kaggle/input/pothole-detection-dataset",
@@ -58,7 +56,7 @@ validation_generator = train_datagen.flow_from_directory("/kaggle/input/pothole-
     batch_size=32,
     class_mode='binary',
     subset='validation')
-Found 135 images belonging to 2 classes.
+# output -> Found 135 images belonging to 2 classes.
 
 
 cnn = tf.keras.models.Sequential()
